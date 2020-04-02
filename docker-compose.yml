@@ -4,19 +4,19 @@ services:
     image: influxdb
     container_name: influxdb
     ports:
-      - "127.0.0.1:8086:8086"        
+      - "8086:8086"        
     env_file:
-      - 'env.influxdb'
+      - 'influxdb.env'
     volumes:
       - "influxdb-data:/var/lib/influxdb"
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana
     container_name: grafana
     ports:
       - "3000:3000"
     env_file:
-      - 'env.grafana'
+      - 'grafana.env'
     user: "0"
     volumes:
       - "grafana-data:/var/lib/grafana"
