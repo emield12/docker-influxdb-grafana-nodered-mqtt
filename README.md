@@ -41,3 +41,7 @@ Will create a backups folder with the container configurations and data.
 ./restore_backup.sh
 ```
 Will restore the container configurations and data from the backups folder.
+
+## TODO
+- Add mqtt container.
+- Add node-red password setup to the run.sh script
