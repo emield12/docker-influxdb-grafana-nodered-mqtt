@@ -20,6 +20,7 @@ services:
     user: "0"
     volumes:
       - "grafana-data:/var/lib/grafana"
+  
   node-red:
     image: nodered/node-red
     container_name: node-red
@@ -27,9 +28,20 @@ services:
       - "1880:1880"
     volumes:
       - "node-red-data:/data"
+  
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - "mosquitto-data:/mosquitto"
 
 volumes:
   influxdb-data:
   grafana-data:        
   node-red-data:
+  mosquitto-data:
+
 

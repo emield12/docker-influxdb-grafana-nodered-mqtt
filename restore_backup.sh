@@ -13,6 +13,7 @@ case "$response" in
 	docker run --rm --volumes-from influxdb -v $(pwd)/backups/influxdb:/backup ubuntu bash -c "tar xvf /backup/backup.tar"
 	docker run --rm --volumes-from grafana -v $(pwd)/backups/grafana:/backup ubuntu bash -c "tar xvf /backup/backup.tar"
 	docker run --rm --volumes-from node-red -v $(pwd)/backups/node-red:/backup ubuntu bash -c "tar xvf /backup/backup.tar"
+	docker run --rm --volumes-from mosquitto -v $(pwd)/backups/mosquitto:/backup ubuntu bash -c "tar xvf /backup/backup.tar"
 	echo "Rebooting containers..."
 	docker-compose down
 	./run.sh
